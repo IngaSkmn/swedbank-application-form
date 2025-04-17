@@ -791,3 +791,37 @@ select:focus {
 .disclaimer {
   font-size: 14px;
 }
+
+@media (max-width: 1440px) {
+  .logo {
+    padding-left: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 36px;
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  .credit-description,
+  .grid-container label,
+  .grid-container legend {
+    justify-content: flex-start;
+    text-align: left;
+  }
+}
+
+@media (max-width: 500px) {
+  .form-steps-nav ul {
+    flex-flow: wrap;
+  }
+
+  .footer-container {
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+  }
+}
