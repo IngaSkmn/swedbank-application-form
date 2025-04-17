@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apply for credit card - Swedbank</title>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <header>
+      <div class="logo-link">
+        <a
+          href="https://swedbank.ee/private?language=ENG"
+          aria-label="Swedbank homepage"
+        >
+          <img
+            src="./assets/swedbank-logo.png"
+            alt="Swedbank logo"
+            class="logo"
+          />
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <h1>Gold Credit Card's Application</h1>
+
+      <div class="frame-form">
+        <div class="form-steps-nav" role="navigation" aria-label="Form steps">
+          <ul>
+            <li class="step-label active" data-step="0">
+              <span class="step-link" aria-hidden="true"> 1 </span>
+              <button
+                type="button"
+                class="step-text"
+                aria-label="Step 1: Application"
+                aria-current="step"
+              >
+                Application
+              </button>
+            </li>
+            <li class="step-label" data-step="1">
+              <span class="step-link" aria-hidden="true"> 2 </span>
+              <button
+                type="button"
+                class="step-text"
+                aria-label="Step 2: Card Terms"
+              >
+                Card Terms
+              </button>
+            </li>
+            <li class="step-label" data-step="2">
+              <span class="step-link" aria-hidden="true"> 3 </span>
+              <button
+                type="button"
+                class="step-text"
+                aria-label="Step 3: Payment Date"
+              >
+                Payment Date
+              </button>
+            </li>
+            <li class="step-label" data-step="3">
+              <span class="step-link" aria-hidden="true"> 4 </span>
+              <button
+                type="button"
+                class="step-text"
+                aria-label="Step 4: Income"
+              >
+                Income
+              </button>
+            </li>
+            <li class="step-label" data-step="4">
+              <span class="step-link" aria-hidden="true"> 5 </span>
+              <button
+                type="button"
+                class="step-text"
+                aria-label="Step 5: Personal data"
+              >
+                Personal data
+              </button>
+            </li>
+            <li class="step-label" data-step="5">
+              <span class="step-link" aria-hidden="true"> 6 </span>
+              <button
+                type="button"
+                class="step-text"
+                aria-label="Step 6: Delivery information"
+              >
+                Delivery information
+              </button>
+            </li>
+            <li class="step-label" data-step="6">
+              <span class="step-link" aria-hidden="true"> 7 </span>
+              <button
+                type="button"
+                class="step-text"
+                aria-label="Step 7: Send application"
+              >
+                Send application
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <form id="credit-card-form" class="form-container">
+          <!-- Step 1: Intro -->
+          <section id="step-0" class="form-step active">
+            <h2>Gold Credit Card with Grace Period</h2>
+            <p>
+              Apply for a Gold Revolving Credit Card easily in just a few steps.
+            </p>
+            <div class="start-navigation">
+              <button id="nextBtn" type="button" class="next">Forward</button>
+            </div>
+          </section>
+
+          <!-- Step 2: Card Terms -->
+          <section id="step-1" class="form-step">
+            <h2>Card conditions</h2>
+
+            <div class="grid-container">
+              <div class="credit-description">
+                <label for="credit-limit"
+                  >Credit limit<span aria-hidden="true" class="required-mark"
+                    >*</span
+                  ></label
+                >
+                <div>
+                  <button
+                    type="button"
+                    aria-describedby="tooltip-text"
+                    id="tooltip-button"
+                    aria-label="Info"
+                    class="tooltip-trigger"
+                  ></button>
+                  <div id="tooltip-text" class="tooltip-text" hidden>
+                    Choose the total limit for your new or existing credit card.
+                  </div>
+                </div>
+              </div>
+
+              <div class="credit-value">
+                <div class="slider-section">
+                  <div id="credit-limit-display">€1000</div>
+                  <!-- Slider input -->
+                  <input
+                    type="range"
+                    id="credit-limit"
+                    min="1000"
+                    max="20000"
+                    step="50"
+                    value="1500"
+                  />
+
+                  <div class="slider-labels">
+                    <span>€1000</span>
+                    <span>€20000</span>
+                  </div>
+                </div>
+
+                <div class="number-input-section">
+                  <!-- Number input -->
+                  <label for="credit-limit-input" class="visually-hidden"
+                    >Manual credit limit input</label
+                  >
+                  <input
+                    type="number"
+                    id="credit-limit-input"
+                    min="1000"
+                    max="20000"
+                    value="1500"
+                    placeholder="Enter amount manually"
+                  />
+                  <div
+                    class="error-message"
+                    id="error-credit-limit-input"
+                    aria-live="polite"
+                  >
+                    Please enter amount between 1000 € - 20 000 €.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="navigation">
+              <button class="back" data-back="0" type="button">Back</button>
+              <button class="next" data-next="2" type="button">Forward</button>
+            </div>
+          </section>
+
+          <!-- Step 3: Payment Date -->
+          <section id="step-2" class="form-step">
+            <h2>Preferred Payment Date</h2>
+
+            <div class="grid-container">
+              <label for="payment-day"
+                >Payment date<span aria-hidden="true" class="required-mark"
+                  >*</span
+                ></label
+              >
+              <select id="payment-day" class="payment-day" required>
+                <option value=""></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+              </select>
+
+              <div
+                class="error-message-column"
+                id="error-payment-day"
+                aria-live="polite"
+              >
+                Please select a payment date.
+              </div>
+            </div>
+
+            <div class="navigation">
+              <button class="back" data-back="1" type="button">Back</button>
+              <button class="next" data-next="3" type="button">Forward</button>
+            </div>
+          </section>
+
+          <!-- Step 4: Income and obligations data -->
+          <section id="step-3" class="form-step">
+            <h2>Income & obligations</h2>
+
+            <div class="grid-container">
+              <label for="net-income"
+                >Monthly income after taxes<span
+                  aria-hidden="true"
+                  class="required-mark"
+                  >*</span
+                ></label
+              >
+              <div>
+                <input
+                  type="number"
+                  id="net-income"
+                  min="0"
+                  class="net-income"
+                  aria-label="Net income in euros"
+                />
+                <span class="input-suffix">EUR</span>
+              </div>
+              <div
+                class="error-message-column"
+                id="error-net-income"
+                aria-live="polite"
+              >
+                Please fill out this field.
+              </div>
+            </div>
+
+            <fieldset>
+              <div class="grid-container">
+                <legend>
+                  Do you have obligations outside Swedbank?<span
+                    aria-hidden="true"
+                    class="required-mark"
+                    >*</span
+                  >
+                </legend>
+
+                <div class="radio-buttons">
+                  <label class="custom-radio"
+                    ><input
+                      type="radio"
+                      name="obligations"
+                      value="no"
+                      class="radio-button"
+                      id="obligations-no"
+                    />No</label
+                  >
+                  <label class="custom-radio"
+                    ><input
+                      type="radio"
+                      name="obligations"
+                      value="yes"
+                      class="radio-button"
+                      id="obligations-yes"
+                    />Yes</label
+                  >
+                </div>
+                <div
+                  class="error-message-column"
+                  id="error-obligations"
+                  aria-live="polite"
+                >
+                  Please fill out this field.
+                </div>
+              </div>
+            </fieldset>
+
+            <div class="navigation">
+              <button class="back" data-back="2" type="button">Back</button>
+              <button class="next" data-next="4" type="button">Forward</button>
+            </div>
+          </section>
+
+          <!-- Step 5: Additional Info -->
+          <section id="step-4" class="form-step">
+            <h2>Additional Information</h2>
+
+            <div class="grid-container">
+              <label for="education"
+                >Education<span aria-hidden="true" class="required-mark"
+                  >*</span
+                ></label
+              >
+              <select id="education" class="additional-info" required>
+                <option value=""></option>
+                <option value="primary">Primary</option>
+                <option value="secondary">Secondary</option>
+                <option value="vocational">Vocational</option>
+                <option value="college">College</option>
+                <option value="higher">Higher</option>
+              </select>
+              <div
+                class="error-message-column"
+                id="error-education"
+                aria-live="polite"
+              >
+                Please fill out this field.
+              </div>
+
+              <label for="occupation"
+                >Occupation<span aria-hidden="true" class="required-mark"
+                  >*</span
+                ></label
+              >
+              <select id="occupation" class="additional-info" required>
+                <option value=""></option>
+                <option value="worker">Worker</option>
+                <option value="specialist">Specialist/Office worker</option>
+                <option value="manager">Middle manager</option>
+                <option value="owner">Owner</option>
+                <option value="student">Student</option>
+                <option value="pensioner">Pensioner</option>
+                <option value="home">At home</option>
+                <option value="unemployed">Unemployed</option>
+                <option value="entrepreneur">Private entrepreneur</option>
+              </select>
+              <div
+                class="error-message-column"
+                id="error-occupation"
+                aria-live="polite"
+              >
+                Please fill out this field.
+              </div>
+
+              <label for="sector"
+                >Business area<span aria-hidden="true" class="required-mark"
+                  >*</span
+                ></label
+              >
+              <select id="sector" class="additional-info" required>
+                <option value=""></option>
+                <option value="agriculture">Agriculture</option>
+                <option value="construction">Construction</option>
+                <option value="transport">Transport</option>
+                <option value="financial">Financial</option>
+                <option value="education">Education</option>
+                <option value="it">Information technologies</option>
+                <option value="health">Health care</option>
+              </select>
+              <div
+                class="error-message-column"
+                id="error-sector"
+                aria-live="polite"
+              >
+                Please fill out this field.
+              </div>
+
+              <label for="employment-duration"
+                >Time employed<span aria-hidden="true" class="required-mark"
+                  >*</span
+                ></label
+              >
+              <select id="employment-duration" class="additional-info" required>
+                <option value=""></option>
+                <option value="trial">Trial period</option>
+                <option value="1year">Up to 1 year</option>
+                <option value="2year">Up to 2 year</option>
+                <option value="3year">Up to 3 year</option>
+                <option value="4year">Up to 4 year</option>
+                <option value="5year">Up to 5 year</option>
+                <option value="more5">More than 5 years</option>
+              </select>
+              <div
+                class="error-message-column"
+                id="error-employment-duration"
+                aria-live="polite"
+              >
+                Please fill out this field.
+              </div>
+            </div>
+
+            <div class="navigation">
+              <button class="back" data-back="3" type="button">Back</button>
+              <button class="next" data-next="5" type="button">Forward</button>
+            </div>
+          </section>
+
+          <!-- Step 6: Contact Info -->
+          <section id="step-5" class="form-step">
+            <h2>Contact Information</h2>
+
+            <fieldset>
+              <div class="grid-container">
+                <legend>
+                  How would you like to receive your card?<span
+                    aria-hidden="true"
+                    class="required-mark"
+                    >*</span
+                  >
+                </legend>
+
+                <div class="checkboxes">
+                  <label class="custom-checkbox">
+                    <input
+                      type="checkbox"
+                      name="delivery"
+                      value="office"
+                      id="delivery-office"
+                      onclick="checkOnlyOne(this)"
+                    />
+                    At Swedbank office
+                  </label>
+                  <label class="custom-checkbox">
+                    <input
+                      type="checkbox"
+                      name="delivery"
+                      value="post"
+                      id="delivery-post"
+                      onclick="checkOnlyOne(this)"
+                    />
+                    Sent by post
+                  </label>
+                </div>
+                <div
+                  class="error-message-column"
+                  id="error-delivery"
+                  aria-live="polite"
+                >
+                  Please fill out this field.
+                </div>
+              </div>
+            </fieldset>
+
+            <div class="navigation">
+              <button class="back" data-back="4" type="button">Back</button>
+              <button class="next" data-next="6" type="button">Forward</button>
+            </div>
+          </section>
+
+          <!-- Step 7: Summary -->
+          <section id="step-6" class="form-step">
+            <h2 class="summary-heading">Summary</h2>
+            <table id="summary-content">
+              <thead>
+                <tr class="visually-hidden">
+                  <th>Field</th>
+                  <th>Selected Value</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+            <div class="navigation">
+              <button class="back" data-back="5" type="button">Back</button>
+              <button class="next" onclick="location.reload()" type="submit">
+                Send application
+              </button>
+            </div>
+          </section>
+        </form>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-section">
+          <h3>Contacts</h3>
+          <ul class="plain-list">
+            <li>
+              <a
+                href="https://swedbank.ee/private/home/important/faq"
+                data-wt-label="Customer Support"
+                >Frequently asked questions</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://swedbank.ee/private/home/contacts"
+                data-wt-label="Bank Contacts"
+                >Contacts, branches, ATMs</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://swedbank.ee/private/home/more/appointments"
+                data-wt-label="Appointment booking"
+                >Book a time</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://swedbank.ee/about"
+                data-wt-label="footer-about-swedbank"
+                >About Swedbank</a
+              >
+            </li>
+          </ul>
+          <p class="disclaimer">
+            SWEDBANK AS<br /><span
+              >LIIVALAIA 8, 15040<br class="compact" />TALLINN</span
+            ><br />SWIFT code/BIC: HABAEE2X<br />Reg. number: 10060701
+          </p>
+        </div>
+
+        <div class="footer-section">
+          <h3>Useful links</h3>
+          <ul class="plain-list">
+            <li>
+              <a
+                href="https://swedbank.ee/private/d2d/ebanking/secureBanking"
+                data-wt-label="Secure banking"
+                >Secure banking</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://swedbank.ee/about/sustainabilityNew"
+                data-wt-label="Sustainability"
+                >Sustainability</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://swedbank.ee/private/home/more/calculator"
+                data-wt-label="Calculators"
+                >Calculators</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://swedbank.ee/private/home/more/pricesrates"
+                data-wt-label="Prices and rates"
+                >Prices and rates</a
+              >
+            </li>
+            <li>
+              <a href="https://blog.swedbank.ee/" data-wt-label="Our blog"
+                >Our blog</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://swedbank.ee/about/careers"
+                data-wt-label="Work with us"
+                >Work with us</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Legal information</h3>
+          <ul class="plain-list">
+            <li>
+              <a
+                href="https://swedbank.ee/private/home/more/complaints"
+                data-wt-label="Handling customer complaints"
+                >Handling customer complaints</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://swedbank.ee/about/about/baltic/newRegulations"
+                data-wt-label="PSD2 and open banking"
+                >PSD2 and open banking</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://swedbank.ee/about/accessibility"
+                data-wt-label="Accessibility"
+                >Accessibility</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Customer programmes</h3>
+          <ul class="plain-list">
+            <li>
+              <a
+                href="https://swedbank.ee/private/home/segments/private"
+                data-wt-label="Private Banking"
+                >Private Banking</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://swedbank.ee/private/home/segments/gold"
+                data-wt-label="Gold customers"
+                >Gold customers</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://swedbank.ee/business/d2d/accounts/open"
+                data-wt-label="Become a business customer"
+                >Become a business customer</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
